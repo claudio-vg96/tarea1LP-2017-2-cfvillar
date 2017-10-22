@@ -1,28 +1,27 @@
 #include <stdio.h>
-
-int main() {
-    //parsear archivo init.uni
-    typedef struct
-    {
-        int x;
-        int y;
-        int matriz;
-    } Datos;
-
+#include <stdlib.h>
+/*
+typedef struct
+{
+    int x;
+    int y;
+    int matriz;
+} Datos;
+*/
+int main()
+{
     FILE *archivo;
-    archivo = fopen("init.uni","r");
-    int caracter;
-
+    char caracteres[100];
+    archivo = fopen("init.txt","r");
     if (archivo == NULL)
-    {
-        printf("\nError de apertura del archivo. \n\n");
-    }
+        exit(1);
     else
     {
         printf("\nEl contenido del archivo de prueba es \n\n");
-        while((caracter = fgetc(archivo)) != EOF)
+        while (feof(archivo) == 0)
         {
-            printf("%c",caracter);
+            fgets(caracteres,100,archivo);
+            printf("%s",caracteres);
         }
     }
     fclose(archivo);
