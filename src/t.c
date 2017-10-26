@@ -1,6 +1,6 @@
 #include "genetic_behaviour.h"
 
-void caract_t(char event, int* movement){ //caracteristica genetica
+void genetic_behaviour(char event, int* movement){ //caracteristica genetica
 	if (event == 'a')
 	{
 		movement[0] = 2;
